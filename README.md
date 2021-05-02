@@ -1,4 +1,4 @@
-# Grab_Link
+# The Grab Link App
 
 We come across many amazing sites while surfing on the Internet or on social media but eventually, we forget about that site and unfortunately can't find it when we actually need it Grab Link allows you to save the link and access it any time in future. Also, you can share the links with friends and use amazing tools on the internet whenever you need them.
 
