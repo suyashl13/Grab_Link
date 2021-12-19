@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:Grab_Link/db/DatabaseHelper.dart';
 import 'package:Grab_Link/models/CustomLink.dart';
 import 'package:Grab_Link/screens/HomePage.dart';
@@ -5,8 +7,16 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class AddLinkPage extends StatefulWidget {
+  String link;
+
+  AddLinkPage([this.link]) {
+    if (link == null) {
+      link = "";
+    }
+  }
+
   @override
-  _AddLinkPageState createState() => _AddLinkPageState();
+  _AddLinkPageState createState() => _AddLinkPageState(link);
 }
 
 class _AddLinkPageState extends State<AddLinkPage> {
@@ -14,6 +24,10 @@ class _AddLinkPageState extends State<AddLinkPage> {
   String title = "";
   String link = "";
   String category = "";
+
+  _AddLinkPageState(this.link){
+    print(link);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,6 +92,7 @@ class _AddLinkPageState extends State<AddLinkPage> {
                     borderRadius: BorderRadius.circular(12),
                     color: Colors.white),
                 child: TextFormField(
+                  initialValue: link,
                   onChanged: (newValue) {
                     setState(() {
                       this.link = newValue;

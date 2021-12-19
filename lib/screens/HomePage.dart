@@ -1,6 +1,7 @@
 import 'package:Grab_Link/db/DatabaseHelper.dart';
 import 'package:Grab_Link/helper/Dialogs.dart';
 import 'package:Grab_Link/screens/AddLinkPage.dart';
+import 'package:Grab_Link/screens/ScanQRPage.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -42,7 +43,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     _setpage();
   }
@@ -56,12 +56,25 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Saved\nLinks",
-                style: TextStyle(
-                    fontFamily: "Manrope",
-                    fontWeight: FontWeight.bold,
-                    fontSize: 32),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Saved\nLinks",
+                    style: TextStyle(
+                        fontFamily: "Manrope",
+                        fontWeight: FontWeight.bold,
+                        fontSize: 32),
+                  ),
+                  IconButton(
+                      onPressed: () => Navigator.push(context,
+                          MaterialPageRoute(builder: (_) => ScanQRPage())),
+                      icon: Icon(
+                        Icons.qr_code_scanner,
+                        size: 32,
+                        color: Color.fromRGBO(150, 115, 200, 1),
+                      ))
+                ],
               ),
               Row(
                 children: [

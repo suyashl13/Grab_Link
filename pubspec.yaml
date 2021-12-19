@@ -31,8 +31,9 @@ dependencies:
   sqflite:
   url_launcher:
   intl:
-  path_provider:
+  path_provider: 
   share:
+  qr_code_scanner: ^0.6.1
 
 dev_dependencies:
   flutter_test:
