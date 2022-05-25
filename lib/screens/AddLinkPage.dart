@@ -124,6 +124,7 @@ class _AddLinkPageState extends State<AddLinkPage> {
                     borderRadius: BorderRadius.circular(12),
                     color: Colors.white),
                 child: TextFormField(
+                  // ignore: missing_return
                   validator: (value) {
                     if (title.trim().length < 3) {
                       return "Should be greater than 3 characters";
